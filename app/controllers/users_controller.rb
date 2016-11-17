@@ -11,7 +11,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)    # Not the final implementation!
     if @user.save
-        redirect_to @user # Handle a successful save.
+       flash[:success] = "Welcome to WhatsGood!"
+       redirect_to @user # Handle a successful save.
     else
       render 'new'
     end
